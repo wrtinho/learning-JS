@@ -3,30 +3,19 @@
         <title>Curso de js</title>
     </head>
     <body>
+        <div id="app" >
+            <input type = 'text' name='nome'/>
+            <button class='botao'>Press</button>
+        </div>
         
         <script>
-          sexo = 'F';
-          
-            
-            //    switch(letra){
-            //     case 'M': return 'Masculino';
-            //     default:return 'Outro'
-            //    }
-
-                var masculino = sexo === 'M';
-
-            //    if(letra === 'M'){
-            //        return 'Masculino'
-            //    }else if (letra === 'F'){
-            //        return 'Feminino'
-            //    }else{
-            //        return 'outro'
-
-            //    }
-            
-           
-            console.log(masculino)
-            
+         var inputElement = document.querySelector('input[name=nome]');
+         var btnElement = document.querySelector('button.botao');
+         btnElement.onclick = function() {
+             var text = inputElement.value;
+             alert (text)
+         }
+         
         </script>
     </body>
 </html>
