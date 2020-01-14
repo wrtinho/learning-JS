@@ -1,4 +1,4 @@
-var listElemente = document.querySelector("#app ul");
+var listElement = document.querySelector("#app ul");
 var inputElement = document.querySelector("#app input");
 var buttonElement = document.querySelector("#app button");
 
@@ -7,24 +7,28 @@ var todos = [
      'Estudar JavaScript',
      'Dormir'
 ];
+
 function renderTodos() {
-    listElemente.innerHTML='';
+    listElement.innerHTML='';
+
     for (todo of todos){
         var todoElement = document.createElement("li");
         var todoText = document.createTextNode(todo);
 
         var linkElement = document.createElement("a");
-        var linktext = document.createTextNode("Excluir");
+        linkElement.setAttribute("href","#")
 
-        
+        var pos = todos.indexOf(todo);
+        linkElement.setAttribute('onclick' , 'deleteTodo('+pos+')')
 
-        
+        var linkText = document.createTextNode("Excluir");
+
+        linkElement.appendChild(linkText);
 
         todoElement.appendChild(todoText);
-        linkElement.appendChild(linktext);
-        listElemente.appendChild(todoElement);
-        
+        todoElement.appendChild(linkElement);
 
+        listElement.appendChild(todoElement);
     }
     
 }
@@ -35,5 +39,10 @@ function addTodo() {
     inputElement.value = '';
     renderTodos();    
 }
-
 buttonElement.onclick= addTodo;
+
+function deleteTodo(pos) {
+    todos.splice(pos,1);
+    renderTodos();
+    
+}
