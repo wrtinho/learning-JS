@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercicio 4</title>
+</head>
+<body>
+    <!-- <label for="">Digite a quantidade de anos de Experiencia</label><br>
+    <input type="text" placeholder="Digite aki">
+    <button>submit</button> -->
+
+    <script>
+        function experiencia(anos) {
+            if (anos <= 1) {
+                return "Iniciante";
+            } else if (anos <= 3) {
+                return "Intermediário";
+            } else if (anos <= 6) {
+                return "Avançado";
+            } else {
+                return "Jedi Master";
+            }
+        }
+
+        var anosEstudo = 7;
+        console.log(experiencia(anosEstudo));
+
+        // var anosEstudo = document.querySelector("input").value;
+        // var buttonElement = document.querySelector("button");
+        // buttonElement.onclick= (console.log(experiencia(anosEstudo)));
+       
+       
+    </script>
+</body>
+</html>
