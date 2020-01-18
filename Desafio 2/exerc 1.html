@@ -1,0 +1,37 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercicio 1</title>
+</head>
+<body>
+         <button id="new">Novo quadrado</button>
+
+         <div id="local"></div>
+       
+    <script>
+
+       
+        var buttonElement = document.querySelector("#new");
+        var boxElement = document.querySelector("#local");
+       
+
+        buttonElement.onclick = function() {
+
+            var square = document.createElement("div")
+            square.style.width = 100;
+            square.style.height = 100;
+            square.style.backgroundColor = '#f00';
+
+            boxElement.appendChild(square);
+         
+        }  
+
+
+
+        
+
+
+    </script>
+</body>
+</html>

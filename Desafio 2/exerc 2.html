@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercicio 2</title>
+</head>
+
+<body>
+    <button id="btn">Criar</button>
+    <div id="local">
+    </div>
+
+
+    <script>
+
+        var botao = document.querySelector("#btn")
+        var loc = document.querySelector("#local")
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        botao.onclick = function () {
+            var locTemp = document.createElement("div")
+            locTemp.style.backgroundColor = '#f00';
+            locTemp.style.width = 100;
+            locTemp.style.height = 100;
+
+            locTemp.onmouseover = function () {
+                locTemp.style.backgroundColor = getRandomColor();
+            }
+
+            loc.appendChild(locTemp)
+
+        }
+
+
+    </script>
+</body>
+
+</html>

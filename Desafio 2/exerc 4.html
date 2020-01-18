@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercicio 4</title>
+
+    </head>
+
+    <body>
+
+        <div id="place">
+        </div>
+
+        <input type="text" name="nome">
+        <button onClick="adicionar()">Adicionar</button>
+
+        <script>
+            var inputElement = document.querySelector("input")
+            var typelist = document.createElement("ul");
+            var position= document.querySelector("#place")
+            var listElements = ['Diego', 'gabriel', 'lucas'];
+            
+
+            function render() {
+                typelist.innerHTML = '';
+                for (element in listElements){
+                    var typeElement = document.createElement("li");
+                    var elementList = document.createTextNode(listElements[element]);
+                    
+                    typeElement.appendChild(elementList);
+                    typelist.appendChild(typeElement);
+                }
+                position.appendChild(typelist);
+            }
+            render()
+                
+            function adicionar() {
+                var inputText = inputElement.value;   
+                listElements.push(inputText);
+                render()
+
+            }
+
+        </script>
+    </body>
+</html>

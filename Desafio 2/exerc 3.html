@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Exercicio 3</title>
+    </head>
+
+    <body>
+        <div id="local"></div>
+
+        <script>
+            var list = document.createElement("ul")
+            
+            var local = document.querySelector("#local")
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+
+            for (nome in nomes){
+                var elemet = document.createElement("li")
+                var iten = document.createTextNode(nomes[nome])
+
+                elemet.appendChild(iten)
+                list.appendChild(elemet)
+            }
+            local.appendChild(list)
+
+
+                
+        
+        </script>
+    </body>
+</html>
